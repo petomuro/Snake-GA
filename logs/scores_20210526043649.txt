@@ -1,0 +1,2 @@
+no_of_layers2_no_of_neurons128_snake_lr0.001_score1019633
+Params: {'no_of_layers': 2, 'no_of_neurons': 128, 'lr': 0.001}
