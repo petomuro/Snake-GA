@@ -3,8 +3,12 @@ Snake GA - Genetic algorithm that solves the Snake game. GA was implemented by [
 
 All necessary requirements are stored in requirements.txt
 
+
+
 # Optimization
 If you want to optimize params, you need to change OPTIMIZATION = True
+
+![Example](https://github.com/petomuro/Snake-GA/blob/main/Training_final.png)
 
 # Test model
 If you want to test trained neural network you need to change:
