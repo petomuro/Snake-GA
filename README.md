@@ -5,15 +5,15 @@ You have to installed [Python 3.7.9](https://www.python.org/downloads/release/py
 
 ![Example](https://github.com/petomuro/Snake-GA/blob/main/Game.PNG)
 
-## Optimization
-If you want to optimize params, you need to: 
+## Train neural network
+If you want to train neural network, you need to: 
   1. change `OPTIMIZATION = True`
   2. run `main.py`
 
 ![Example](https://github.com/petomuro/Snake-GA/blob/main/Training_final.png)
 
-## Test model
-When the optimization is complete, a file will be created in the weights folder. 
+## Test neural network
+When the training of neural network is complete, a file will be created in the weights folder. 
 
 If you want to test trained neural network you need to:
   1. change `OPTIMIZATION = False`
@@ -21,7 +21,7 @@ If you want to test trained neural network you need to:
   3. run `main.py`
 
 ## Create graph
-When the optimization is complete, a file will be created in the results folder.
+When the training is complete, a file will be created in the results folder.
 
 If you want to create graph you need to: 
   1. change in `helper.py` --> `with open('results/results_name.csv') as results_file:` --> e.g. `with open('results/results20210520223339.csv') as results_file:`
