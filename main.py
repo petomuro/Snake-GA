@@ -27,6 +27,7 @@ class Optimization:
                     score)) + '\n')
             f.write('Params: ' + str(param) + '\n')
 
+
 class Agent:
     def __init__(self, vectors_and_keys, n_games, total_score):
         self.vectors_and_keys = vectors_and_keys
@@ -46,7 +47,10 @@ class Agent:
         angle, snake_direction_vector_normalized, food_direction_vector_normalized = self.get_angle(
             snake_direction_vector, food_direction_vector, game)
 
-        return np.array([int(obstacle_front), int(obstacle_right), int(obstacle_left), snake_direction_vector_normalized[0], food_direction_vector_normalized[0], snake_direction_vector_normalized[1], food_direction_vector_normalized[1], angle])
+        return np.array(
+            [int(obstacle_front), int(obstacle_right), int(obstacle_left), snake_direction_vector_normalized[0],
+             food_direction_vector_normalized[0], snake_direction_vector_normalized[1],
+             food_direction_vector_normalized[1], angle])
 
     def get_snake_direction_vector(self, snake, length):
         return np.array(snake[length - 1]) - np.array(snake[length - 2])
@@ -57,7 +61,8 @@ class Agent:
     def get_obstacles(self, snake, snake_direction_vector, length, game):
         point = np.array(snake[length - 1]) + np.array(snake_direction_vector)
 
-        return point.tolist() in snake[:-1] or point[0] < 0 or point[1] < 0 or point[0] >= game.DISPLAY_WIDHT or point[1] >= game.DISPLAY_HEIGHT
+        return point.tolist() in snake[:-1] or point[0] < 0 or point[1] < 0 or point[0] >= game.DISPLAY_WIDHT or point[
+            1] >= game.DISPLAY_HEIGHT
 
     def turn_vector_to_the_left(self, vector):
         return np.array([-vector[1], vector[0]])
@@ -75,10 +80,12 @@ class Agent:
         if norm_of_food_direction_vector == 0:
             norm_of_food_direction_vector = game.SNAKE_BLOCK
 
-        snake_direction_vector_normalized = snake_direction/norm_of_snake_direction_vector
-        food_direction_vector_normalized = food_direction/norm_of_food_direction_vector
-        angle = m.atan2(food_direction_vector_normalized[1] * snake_direction_vector_normalized[0] - food_direction_vector_normalized[0] * snake_direction_vector_normalized[1],
-                        food_direction_vector_normalized[1] * snake_direction_vector_normalized[1] + food_direction_vector_normalized[0] * snake_direction_vector_normalized[0]) / m.pi
+        snake_direction_vector_normalized = snake_direction / norm_of_snake_direction_vector
+        food_direction_vector_normalized = food_direction / norm_of_food_direction_vector
+        angle = m.atan2(food_direction_vector_normalized[1] * snake_direction_vector_normalized[0] -
+                        food_direction_vector_normalized[0] * snake_direction_vector_normalized[1],
+                        food_direction_vector_normalized[1] * snake_direction_vector_normalized[1] +
+                        food_direction_vector_normalized[0] * snake_direction_vector_normalized[0]) / m.pi
 
         return angle, snake_direction_vector_normalized, food_direction_vector_normalized
 

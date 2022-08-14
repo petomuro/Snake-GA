@@ -67,7 +67,7 @@ class SnakeGame:
 
         self.CHECK_COORDINATES = True
 
-        while(self.CHECK_COORDINATES):
+        while (self.CHECK_COORDINATES):
             for i in self.SNAKE_LIST:
                 if i == [self.FOODX, self.FOODY]:
                     self.FOODX = round(random.randrange(
@@ -115,7 +115,7 @@ class SnakeGame:
 
         self.CHECK_COORDINATES = True
 
-        while(self.CHECK_COORDINATES):
+        while (self.CHECK_COORDINATES):
             for i in self.SNAKE_LIST:
                 if i == [self.FOODX, self.FOODY]:
                     self.FOODX = round(random.randrange(
@@ -150,13 +150,15 @@ class SnakeGame:
     def snake_segment(self, snake_block, snake_list):
         for x in snake_list:
             pygame.draw.rect(self.DISPLAY, self.BLUE, [
-                             x[0], x[1], snake_block, snake_block])
+                x[0], x[1], snake_block, snake_block])
             pygame.draw.rect(self.DISPLAY, self.GREEN, [
-                             snake_list[self.LENGHT_OF_SNAKE - 1][0], snake_list[self.LENGHT_OF_SNAKE - 1][1], snake_block, snake_block])
+                snake_list[self.LENGHT_OF_SNAKE - 1][0], snake_list[self.LENGHT_OF_SNAKE - 1][1], snake_block,
+                snake_block])
 
     # GENERATE OBSERVATIONS
     def generate_observations(self):
-        return self.GAME_CLOSE, self.LENGHT_OF_SNAKE - 1, [self.FOODX, self.FOODY], self.SNAKE_LIST, self.LENGHT_OF_SNAKE
+        return self.GAME_CLOSE, self.LENGHT_OF_SNAKE - 1, [self.FOODX,
+                                                           self.FOODY], self.SNAKE_LIST, self.LENGHT_OF_SNAKE
 
     # MAIN LOOP
     def game_loop(self, key):
@@ -195,7 +197,7 @@ class SnakeGame:
 
         # DRAW FOOD
         pygame.draw.rect(self.DISPLAY, self.RED, [
-                         self.FOODX, self.FOODY, self.SNAKE_BLOCK, self.SNAKE_BLOCK])
+            self.FOODX, self.FOODY, self.SNAKE_BLOCK, self.SNAKE_BLOCK])
 
         # IF SNAKE TAKES FOOD
         if self.SNAKEX == self.FOODX and self.SNAKEY == self.FOODY:
@@ -233,7 +235,7 @@ class SnakeGame:
         self.CHECK_COORDINATES = True
 
         # CHECKS IF THE APPLE ISNT GENERATE ON SNAKE POSITION
-        while(self.CHECK_COORDINATES):
+        while (self.CHECK_COORDINATES):
             for i in self.SNAKE_LIST:
                 if i == [self.FOODX, self.FOODY]:
                     self.FOODX = round(random.randrange(
